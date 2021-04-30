@@ -820,7 +820,7 @@ Example:
 
 {{ include "helm-toolkit.utils.joinListWithSpaces" .Values.sumologic.logs.fields }}
 */}}
-{{- define "helm-toolkit.utils.joinListWithSpaces" -}}
+{{- define "deploy-toolkit.utils.joinListWithSpaces" -}}
 {{- $local := dict "first" true -}}
 {{- range $k, $v := . -}}
 {{- if not $local.first }} {{ end -}}

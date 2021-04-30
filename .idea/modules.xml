@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../my-app/.idea/my-app.iml" filepath="$PROJECT_DIR$/../my-app/.idea/my-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/obs.iml" filepath="$PROJECT_DIR$/.idea/obs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sumologic-kubernetes-collection/.idea/sumologic-kubernetes-collection.iml" filepath="$PROJECT_DIR$/../sumologic-kubernetes-collection/.idea/sumologic-kubernetes-collection.iml" />
+    </modules>
+  </component>
+</project>

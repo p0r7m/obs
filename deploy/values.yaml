@@ -713,7 +713,7 @@ fluent-bit:
     #   cpu: 10m
   #   memory: 8Mi
 
-  ## Uncomment the flag below to not install fluent-bit helm chart as a dependency along with this helm chart.
+  ## Uncomment the flag below to not install fluent-bit deploy chart as a dependency along with this deploy chart.
   ## Comment it out if you wish to have the fluent-bit dependency installed.
   ## Setting the flag to true instead of commenting out will break other functionality.
   # enabled: false
@@ -876,8 +876,8 @@ fluent-bit:
 ## ref: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
 kube-prometheus-stack:
 
-  ## Uncomment the flag below to not install kube-prometheus-stack helm chart
-  ## as a dependency along with this helm chart.
+  ## Uncomment the flag below to not install kube-prometheus-stack deploy chart
+  ## as a dependency along with this deploy chart.
   ## Comment it out if you wish to have the prometheus-operator dependency installed.
   ## Setting the flag to true instead of commenting out will break other functionality.
   # enabled: false
