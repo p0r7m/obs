@@ -42,8 +42,8 @@ function push_helm_chart() {
 
    echo $(pwd)
 
-  mv -f "${sync_dir}"/* "${chart_dir}"
-  rmdir "${sync_dir}"
+#  mv -f "${sync_dir}"/* "${chart_dir}"
+#  rmdir "${sync_dir}"
 
   git add -A
   git status
