@@ -467,11 +467,6 @@ sumologic.com/app: fluentd-events
 sumologic.com/component: events
 {{- end -}}
 
-{{- define "sumologic.labels.traces" -}}
-sumologic.com/app: otelcol
-sumologic.com/component: traces
-{{- end -}}
-
 {{- define "sumologic.label.scrape" -}}
 sumologic.com/scrape: "true"
 {{- end -}}
@@ -489,11 +484,6 @@ sumologic.com/scrape: "true"
 {{- define "sumologic.labels.scrape.events" -}}
 {{ template "sumologic.label.scrape" . }}
 {{ template "sumologic.labels.events" . }}
-{{- end -}}
-
-{{- define "sumologic.labels.scrape.traces" -}}
-{{ template "sumologic.label.scrape" . }}
-{{ template "sumologic.labels.traces" . }}
 {{- end -}}
 
 {{/*
