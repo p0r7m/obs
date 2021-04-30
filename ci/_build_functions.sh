@@ -9,12 +9,11 @@ err_report() {
 trap 'err_report $LINENO' ERR
 
 function helm() {
-  echo "helllo"
-#  docker run --rm \
-#    -v "$(pwd):/chart" \
-#    -w /chart \
-#    sumologic/kubernetes-tools:2.2.3 \
-#    helm "$@"
+  docker run --rm \
+    -v "$(pwd):/chart" \
+    -w /chart \
+    sumologic/kubernetes-tools:2.2.3 \
+    helm "$@"
 }
 
 function set_up_github() {
@@ -32,18 +31,16 @@ function push_helm_chart() {
   # we need to create new package in a different dir, merge the index and move the package back
   mkdir -p "${sync_dir}"
   set -ex
-  helm package deploy --dependency-update --version="${version}" --app-version="${version}" --destination "${sync_dir}"
+  helm package deploy/helm/sumologic --dependency-update --version="${version}" --app-version="${version}" --destination "${sync_dir}"
 
   git fetch origin gh-pages
   git reset --hard HEAD
   git checkout gh-pages
 
-  helm repo index --url "https://p0r7m.github.io/obs${chart_dir:1}/" --merge "${chart_dir}/index.yaml" "${sync_dir}"
+  helm repo index --url "https://sumologic.github.io/sumologic-kubernetes-collection${chart_dir:1}/" --merge "${chart_dir}/index.yaml" "${sync_dir}"
 
-   echo $(pwd)
-
-#  mv -f "${sync_dir}"/* "${chart_dir}"
-#  rmdir "${sync_dir}"
+  mv -f "${sync_dir}"/* "${chart_dir}"
+  rmdir "${sync_dir}"
 
   git add -A
   git status
