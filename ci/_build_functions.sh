@@ -9,11 +9,12 @@ err_report() {
 trap 'err_report $LINENO' ERR
 
 function helm() {
-  docker run --rm \
-    -v "$(pwd):/chart" \
-    -w /chart \
-    sumologic/kubernetes-tools:2.2.3 \
-    helm "$@"
+  echo "helllo"
+#  docker run --rm \
+#    -v "$(pwd):/chart" \
+#    -w /chart \
+#    sumologic/kubernetes-tools:2.2.3 \
+#    helm "$@"
 }
 
 function set_up_github() {
